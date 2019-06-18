@@ -1,9 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-    <h3 class="font-weight-light py-3 border-bottom mb-5 shadow-sm">
+    <h3 class="font-weight-light py-3 border-bottom mb-5 shadow-sm w-100 fixed-top bg-white">
         Welcome to {{ title }}!
     </h3>
-    <div class="container">
+    <div class="container mt-100">
         <pagination-controls (pageChange)=" p = this.$event"></pagination-controls>
         <table class="table" id="myTable">
             <thead>
@@ -32,6 +32,7 @@
         </table>
         <pagination-controls (pageChange)=" p = this.$event"></pagination-controls>
     </div>
+
     <div class="modal fade bg-transparent-70" id="modal" [style.display]="showModal ? 'block' : 'none'">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -69,5 +70,10 @@
             </div>
         </div>
     </div>
+    <footer class="border-top py-4 bg-light mt-100">
+        Project : Initial Tasks <br>
+        Framework : Angular 8, Bootstrap 4 <br>
+        Own JSON Api
+    </footer>
 </div>
 <router-outlet></router-outlet>
