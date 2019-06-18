@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h3 class="font-weight-light py-3 border-bottom mb-5 shadow-sm">
+        Welcome to {{ title }}!
+    </h3>
+    <div class="container">
+        <pagination-controls (pageChange)=" p = this.$event"></pagination-controls>
+        <table class="table" id="myTable">
+            <thead>
+            <tr>
+                <th (click)="sortTable(0)">#</th>
+                <th (click)="sortTable(1)">Name</th>
+                <th (click)="sortTable(2)">Gender</th>
+                <th (click)="sortTable(3)">Company</th>
+                <th (click)="sortTable(4)">Email</th>
+                <th>Handle</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sitem of myData | paginate: { itemsPerPage: 15, currentPage: p }">
+                <td>{{ sitem.index < 10 ? '0'+sitem.index : sitem.index }}</td>
+                <td>{{ sitem.name }}</td>
+                <td>{{ sitem.gender }}</td>
+                <td>{{ sitem.company }}</td>
+                <td>{{ sitem.email }}</td>
+                <td>
+                    <button class="btn btn-dark">View</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)=" p = this.$event"></pagination-controls>
+    </div>
+</div>
+<router-outlet></router-outlet>
