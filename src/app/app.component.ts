@@ -13,6 +13,11 @@ export class AppComponent implements OnInit {
     title = 'initial-task';
     public myData: any = [];
 
+
+    public selectedIndex: any;
+    public highlightRow(sitem) {
+        this.selectedIndex = sitem.index;
+    }
     constructor(private myJsonService: MyJsonService) {
     }
 
@@ -37,11 +42,13 @@ export class AppComponent implements OnInit {
                 if (dir === 'asc') {
                     if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                         shouldSwitch = true;
+                        console.log('asc');
                         break;
                     }
                 } else if (dir === 'desc') {
                     if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
                         shouldSwitch = true;
+                        console.log('desc');
                         break;
                     }
                 }

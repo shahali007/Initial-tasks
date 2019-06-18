@@ -17,7 +17,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let sitem of myData | paginate: { itemsPerPage: 15, currentPage: p }">
+            <tr *ngFor="let sitem of myData | paginate: { itemsPerPage: 15, currentPage: p }" (click)="highlightRow(sitem)"
+                [ngClass] = "{'highlight' : sitem.index == selectedIndex}">
                 <td>{{ sitem.index < 10 ? '0'+sitem.index : sitem.index }}</td>
                 <td>{{ sitem.name }}</td>
                 <td>{{ sitem.gender }}</td>

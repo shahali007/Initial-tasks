@@ -2,4 +2,8 @@ th {
   cursor: pointer;
 }
 
+.highlight {
+  background: #dee4ff;
+}
+
 /*# sourceMappingURL=app.component.css.map */
