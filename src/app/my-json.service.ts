@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class MyJsonService {
 
-  private myDataUrl = 'https://raw.githubusercontent.com/shahali007/MyJsonData/master/myjsondata.json'
+  private myDataUrl = 'https://raw.githubusercontent.com/shahali007/MyJsonData/master/myjsondata.json';
   constructor(private http: HttpClient) { }
 
   getMyJsonData(): Observable<MyJsonData[]> {

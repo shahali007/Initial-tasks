@@ -9,22 +9,45 @@ import {MyJsonService} from './my-json.service';
 })
 export class AppComponent implements OnInit {
     p: number = 1;
+    id: any;
+    index: any;
+    name: any;
+    gender: string;
+    company: string;
+    email: string;
+    showModal: boolean;
 
     title = 'initial-task';
     public myData: any = [];
 
 
     public selectedIndex: any;
+
     public highlightRow(sitem) {
         this.selectedIndex = sitem.index;
     }
-    constructor(private myJsonService: MyJsonService) {
-    }
+
+    constructor(private myJsonService: MyJsonService) {}
 
     ngOnInit() {
-        // this.myData = this.myJsonService.getMyJsonData();
         this.myJsonService.getMyJsonData()
             .subscribe(data => this.myData = data);
+    }
+
+    modalShow(data) {
+        console.log(data);
+        this.showModal  = true;
+        this.id         = data._id;
+        this.index      = data.index;
+        this.name       = data.name;
+        this.gender     = data.gender;
+        this.company    = data.company;
+        this.email      = data.email;
+    }
+
+    modalHide() {
+        console.log('hide modal');
+        this.showModal  = false;
     }
 
     sortTable(n) {
@@ -42,13 +65,13 @@ export class AppComponent implements OnInit {
                 if (dir === 'asc') {
                     if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                         shouldSwitch = true;
-                        console.log('asc');
+                        //console.log('asc');
                         break;
                     }
                 } else if (dir === 'desc') {
                     if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
                         shouldSwitch = true;
-                        console.log('desc');
+                        //console.log('desc');
                         break;
                     }
                 }

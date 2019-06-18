@@ -5,3 +5,11 @@ th {
 .highlight{
   background: #dee4ff;
 }
+
+.fade:not(.show) {
+  opacity: 1!important;
+}
+
+.bg-transparent-70{
+  background: rgba(#000, .7);
+}

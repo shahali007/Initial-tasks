@@ -25,12 +25,49 @@
                 <td>{{ sitem.company }}</td>
                 <td>{{ sitem.email }}</td>
                 <td>
-                    <button class="btn btn-dark">View</button>
+                    <button class="btn btn-dark" (click)="modalShow(sitem)">View</button>
                 </td>
             </tr>
             </tbody>
         </table>
         <pagination-controls (pageChange)=" p = this.$event"></pagination-controls>
+    </div>
+    <div class="modal fade bg-transparent-70" id="modal" [style.display]="showModal ? 'block' : 'none'">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ name }}</h5>
+                    <button type="button" class="close" (click)="modalHide()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-left">
+                    <div class="row m-0 py-3 border-bottom">
+                        <div class="col-sm-3">ID</div>
+                        <div class="col-sm-9">{{ index }}</div>
+                    </div>
+                    <div class="row m-0 py-3 border-bottom">
+                        <div class="col-sm-3">Name</div>
+                        <div class="col-sm-9">{{ name }}</div>
+                    </div>
+                    <div class="row m-0 py-3 border-bottom">
+                        <div class="col-sm-3">Gender</div>
+                        <div class="col-sm-9 text-capitalize">{{ gender }}</div>
+                    </div>
+                    <div class="row m-0 py-3 border-bottom">
+                        <div class="col-sm-3">Company</div>
+                        <div class="col-sm-9">{{ company }}</div>
+                    </div>
+                    <div class="row m-0 py-3">
+                        <div class="col-sm-3">Email</div>
+                        <div class="col-sm-9">{{ email }}</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="modalHide()">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <router-outlet></router-outlet>
