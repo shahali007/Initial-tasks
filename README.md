@@ -13,3 +13,4 @@
 * Output of clicked table cell data: [Bootstrap modal](https://getbootstrap.com/docs/4.3/components/modal/)
 * Change color of last clicked row : function 'highlightRow()' in app.component.ts and [ngClass] in app.component.html
 * Public repository of project : [Initial Tasks](https://github.com/shahali007/Initial-tasks)
+* Live project : http://cloudlylab.com/eskimi/initial-task/

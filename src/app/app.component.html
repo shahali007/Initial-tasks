@@ -5,7 +5,7 @@
     </h3>
     <div class="container mt-100">
         <pagination-controls (pageChange)=" p = this.$event"></pagination-controls>
-        <table class="table" id="myTable">
+        <table class="table table-sm" id="myTable">
             <thead>
             <tr>
                 <th (click)="sortTable(0)">#</th>
@@ -25,7 +25,7 @@
                 <td>{{ sitem.company }}</td>
                 <td>{{ sitem.email }}</td>
                 <td>
-                    <button class="btn btn-dark" (click)="modalShow(sitem)">View</button>
+                    <button class="btn btn-dark btn-sm" (click)="modalShow(sitem)">View</button>
                 </td>
             </tr>
             </tbody>
